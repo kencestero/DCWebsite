@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Diamond Cargo Mfg" />
+  <meta name="description" content="Customize your Diamond Cargo trailer with our extensive options. Colors, doors, windows, electrical packages, and more." />
+  <!-- Favicon Icon -->
+  <link rel="icon" href="assets/img/favicon.svg" />
+  <!-- Site Title -->
+  <title>Trailer Options & Upgrades | Diamond Cargo Mfg</title>
+  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Options Page Styles */
+    .cs-options-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+    .cs-options-intro h2 {
+      margin-bottom: 20px;
+    }
+    .cs-options-intro p {
+      font-size: 18px;
+      color: #666;
+    }
+
+    /* Standard Features */
+    .cs-standard-features {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 50px;
+      border-radius: 15px;
+      color: #fff;
+      margin-bottom: 60px;
+    }
+    .cs-standard-features h3 {
+      color: #fff;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .cs-standard-features .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .cs-standard-features .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+    }
+    .cs-standard-features .feature-item i {
+      color: #4ade80;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    /* Options Categories */
+    .cs-options-category {
+      margin-bottom: 60px;
+    }
+    .cs-options-category h3 {
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    .cs-options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .cs-option-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    .cs-option-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-color: var(--accent);
+    }
+    .cs-option-card h5 {
+      margin-bottom: 12px;
+      color: #333;
+    }
+    .cs-option-card p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    .cs-option-card .option-details {
+      font-size: 13px;
+      color: #888;
+    }
+
+    /* Color Swatches */
+    .cs-color-section {
+      background: #f8f9fa;
+      padding: 50px;
+      border-radius: 15px;
+      margin-bottom: 60px;
+    }
+    .cs-color-section h3 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .cs-color-section .color-intro {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    .cs-color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+    }
+    .cs-color-swatch {
+      text-align: center;
+    }
+    .cs-color-swatch .swatch {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    .cs-color-swatch span {
+      font-size: 13px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    /* Packages Section */
+    .cs-packages-section h3 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .cs-package-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 35px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      height: 100%;
+      border: 2px solid #e0e0e0;
+      transition: all 0.3s ease;
+    }
+    .cs-package-card.featured {
+      border-color: var(--accent);
+      position: relative;
+    }
+    .cs-package-card.featured::before {
+      content: 'Popular';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      padding: 5px 20px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .cs-package-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+    .cs-package-card h4 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .cs-package-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 25px 0;
+    }
+    .cs-package-card ul li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cs-package-card ul li:last-child {
+      border-bottom: none;
+    }
+    .cs-package-card ul li i {
+      color: #4ade80;
+    }
+
+    @media (max-width: 991px) {
+      .cs-standard-features {
+        padding: 30px 20px;
+      }
+      .cs-color-section {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Start Preloader -->
+  <div id="logi-preloader">
+    <div id="cs-logi-preloader" class="cs-logi-preloader">
+      <div class="reveal-img-wrap">
+        <div class="preloader-img-inner">
+          <img src="assets/img/logi-preloader-logo.png" alt="Diamond Cargo">
+        </div>
+      </div>
+     </div>
+  </div>
+  <!-- End Preloader -->
+
+  <!-- Start Header Section -->
+  <header class="cs_site_header cs-header-with-bg cs_style1 cs_sticky_header">
+    <!-- Header Topbar Start -->
+    <div class="cs_logi_topbar">
+      <div class="container-fluid">
+        <div class="cs-topbar-container">
+          <div class="cs-topbar-left">
+            <span class="cs-small-text cs-color-black">Douglas, GA | Quality Enclosed Trailers Since 2006</span>
+          </div>
+          <div class="cs-logi-topbar-right">
+            <div class="cs-topbar-social">
+              <ul>
+                <li>
+                  <a href="#" class="cs-text_b_line"><span>FB</span></a>
+                </li>
+                <li>
+                  <a href="#" class="cs-text_b_line"><span>IG</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Topbar -->
+
+    <!-- Start Main Header Area -->
+    <div class="cs_main_header">
+      <div class="container-fluid">
+        <div class="cs_main_header_in">
+          <!-- Start Main Header Left Area -->
+          <div class="cs_main_header_left">
+            <div class="cs-logi-header-logo">
+              <a class="cs_site_branding" href="index.html">
+                <img src="assets/img/logo_black_text.png" alt="Diamond Cargo Mfg" />
+              </a>
+            </div>
+          </div>
+          <!-- End Main Header Left Area -->
+
+          <!-- Start Main Header Middle Area -->
+          <div class="cs-logi-header-middle">
+            <div class="cs_nav cs_medium">
+              <ul class="cs_nav_list">
+                <li>
+                  <a href="index.html" class="cs-text_b_line"><span>Home</span></a>
+                </li>
+                <li>
+                  <a href="about.html" class="cs-text_b_line"><span>About</span></a>
+                </li>
+                <li>
+                  <a href="trailers.html" class="cs-text_b_line"><span>Trailers</span></a>
+                </li>
+                <li class="active">
+                  <a href="options.html" class="cs-text_b_line"><span>Options</span></a>
+                </li>
+                <li>
+                  <a href="dealers.html" class="cs-text_b_line"><span>Dealers</span></a>
+                </li>
+                <li>
+                  <a href="contact.html" class="cs-text_b_line"><span>Contact</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- End Main Header Middle Area -->
+
+          <!-- Start Main Header Right Area -->
+          <div class="cs_main_header_right">
+            <div class="cs-header-additional-item">
+              <a href="contact.html"><span class="cs_accent_color">+</span> Get a Quote</a>
+            </div>
+            <div class="cs_toolbox">
+              <span class="cs_icon_btn">
+                <span class="cs_icon_btn_in">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </span>
+            </div>
+          </div>
+          <!-- End Main Header Right Area -->
+        </div>
+      </div>
+    </div>
+    <!-- End Main Header Area -->
+
+    <!-- Header Email Phone -->
+    <div class="cs-header-emai-phone">
+      <div class="cs-topbar-email">
+        <div class="cs-email">
+          <a href="mailto:info@diamondcargomfg.com">info@diamondcargomfg.com</a>
+        </div>
+      </div>
+      <a href="tel:+19125551234" class="cs-header-phone">
+        <div class="cs-header-phone-content">
+          <div class="cs-header-phone-in">
+            <div class="cs-header-phone-icon">
+              <i class="flaticon-viber"></i>
+            </div>
+            <div class="cs-header-phone-number">
+              <span>Call Us</span>
+              <div>
+                <h6 class="cs-text-style-h6 cs-text_b_line">
+                  (912) 555-1234
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- Header Email Phone -->
+  </header>
+  <!-- End Header Section -->
+
+  <!-- Start Sidebar -->
+  <div class="cs_side_header">
+    <button class="cs_close"></button>
+    <div class="cs_side_header_overlay"></div>
+    <div class="cs_side_header_in">
+      <div class="cs-sidebar-about-brand">
+        <a class="cs_site_branding" href="index.html">
+          <img src="assets/img/logo_black_text.png" alt="Diamond Cargo Mfg" />
+        </a>
+        <p>
+          Quality enclosed trailers built in Douglas, Georgia since 2006.
+        </p>
+      </div>
+      <div class="cs-sidebar-middle-area">
+        <p>Douglas, GA</p>
+        <div class="cs-sidebar-emai-phone">
+          <a href="tel:+19125551234" class="cs-text-style-h6">(912) 555-1234</a>
+          <a href="mailto:info@diamondcargomfg.com" class="cs-text-style-h6">info@diamondcargomfg.com</a>
+        </div>
+        <div class="cs-common-icon-style cs-sidebar-social">
+          <ul>
+            <li>
+              <a href="#">
+                <i class="flaticon-facebook-app-symbol"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="flaticon-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Sidebar -->
+
+  <!-- Start Common BreadCrumb -->
+  <section>
+    <div class="cs-braidcrumb-wrap cs-bread-style-2">
+      <div class="container">
+        <div class="row cs_center">
+          <div class="cs-bread-page-title-area">
+            <div class="cs-page-title-in">
+              <div class="cs-page-title">
+                <h2>Options & Upgrades</h2>
+              </div>
+              <div class="breadcrumb">
+                <ul class="cs_mp0">
+                  <li>
+                    <a href="index.html" class="cs-text_b_line"><span>Home</span></a>
+                  </li>
+                  <li>.</li>
+                  <li>Options</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Common BreadCrumb -->
+
+  <div class="cs-section-height"></div>
+  <!-- Section to Section Gap -->
+
+  <!-- Start Options Content -->
+  <section>
+    <div class="container">
+      <!-- Intro -->
+      <div class="cs-options-intro">
+        <h2>Build Your Perfect Trailer</h2>
+        <p>Every Diamond Cargo trailer comes with quality standard features. Upgrade and customize to match your exact needs.</p>
+      </div>
+
+      <!-- Standard Features -->
+      <div class="cs-standard-features">
+        <h3>Standard Features (Included on Every Trailer)</h3>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>Tube Steel Main Frame</span>
+          </div>
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>24" O.C. Wall Studs</span>
+          </div>
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>24" O.C. Floor Crossmembers</span>
+          </div>
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>16" O.C. Roof Bows</span>
+          </div>
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>.030 Aluminum Exterior</span>
+          </div>
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>3/8" Plywood Walls</span>
+          </div>
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>3/4" Plywood Floor</span>
+          </div>
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>Rear Ramp Door w/ Flap</span>
+          </div>
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>32" Side Entry Door</span>
+          </div>
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>LED Exterior Lights</span>
+          </div>
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>Safety Chains</span>
+          </div>
+          <div class="feature-item">
+            <i class="flaticon-tick"></i>
+            <span>DOT Approved</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Color Options -->
+      <div class="cs-color-section">
+        <h3>Exterior Colors</h3>
+        <p class="color-intro">Choose from our wide selection of .030 aluminum colors. Two-tone and custom colors available upon request.</p>
+        <div class="cs-color-grid">
+          <div class="cs-color-swatch">
+            <div class="swatch" style="background: #FFFFFF;"></div>
+            <span>White</span>
+          </div>
+          <div class="cs-color-swatch">
+            <div class="swatch" style="background: #1a1a1a;"></div>
+            <span>Black</span>
+          </div>
+          <div class="cs-color-swatch">
+            <div class="swatch" style="background: #C0C0C0;"></div>
+            <span>Silver</span>
+          </div>
+          <div class="cs-color-swatch">
+            <div class="swatch" style="background: #4A4A4A;"></div>
+            <span>Charcoal</span>
+          </div>
+          <div class="cs-color-swatch">
+            <div class="swatch" style="background: #CC0000;"></div>
+            <span>Victory Red</span>
+          </div>
+          <div class="cs-color-swatch">
+            <div class="swatch" style="background: #003366;"></div>
+            <span>Indigo Blue</span>
+          </div>
+          <div class="cs-color-swatch">
+            <div class="swatch" style="background: #228B22;"></div>
+            <span>Forest Green</span>
+          </div>
+          <div class="cs-color-swatch">
+            <div class="swatch" style="background: #FF6600;"></div>
+            <span>Orange</span>
+          </div>
+          <div class="cs-color-swatch">
+            <div class="swatch" style="background: #FFD700;"></div>
+            <span>Yellow</span>
+          </div>
+          <div class="cs-color-swatch">
+            <div class="swatch" style="background: #8B4513;"></div>
+            <span>Brown</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upgrade Options -->
+      <div class="cs-options-category">
+        <h3>Popular Upgrades</h3>
+        <div class="cs-options-grid">
+          <div class="cs-option-card">
+            <h5>Axle Upgrades</h5>
+            <p>Increase your payload capacity with upgraded axles.</p>
+            <div class="option-details">
+              3500lb / 5200lb / 6000lb / 7000lb options
+            </div>
+          </div>
+          <div class="cs-option-card">
+            <h5>Ramp Door Options</h5>
+            <p>Enhanced ramp doors for easier loading.</p>
+            <div class="option-details">
+              Spring Assist / Transition Flap / Extended Length
+            </div>
+          </div>
+          <div class="cs-option-card">
+            <h5>Side Door Upgrades</h5>
+            <p>Additional access points and sizes.</p>
+            <div class="option-details">
+              36" Door / 48" Door / Double Doors / Barn Doors
+            </div>
+          </div>
+          <div class="cs-option-card">
+            <h5>Windows</h5>
+            <p>Add natural light and ventilation.</p>
+            <div class="option-details">
+              12"x18" / 15"x30" / Slider / Tinted
+            </div>
+          </div>
+          <div class="cs-option-card">
+            <h5>Vents & Ventilation</h5>
+            <p>Keep your cargo cool and dry.</p>
+            <div class="option-details">
+              Flow-Thru Vents / Roof Vents / Wall Vents
+            </div>
+          </div>
+          <div class="cs-option-card">
+            <h5>Flooring</h5>
+            <p>Upgrade to premium flooring options.</p>
+            <div class="option-details">
+              ATP Diamond Plate / Rubber Coin / Epoxy Coated
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Electrical Options -->
+      <div class="cs-options-category">
+        <h3>Electrical & Lighting</h3>
+        <div class="cs-options-grid">
+          <div class="cs-option-card">
+            <h5>Interior Lighting</h5>
+            <p>Illuminate your workspace.</p>
+            <div class="option-details">
+              12V LED Dome / 12V LED Strip / 110V Fixtures
+            </div>
+          </div>
+          <div class="cs-option-card">
+            <h5>Electrical Package</h5>
+            <p>Full electrical setup for your needs.</p>
+            <div class="option-details">
+              30 Amp / 50 Amp / 100 Amp Panels
+            </div>
+          </div>
+          <div class="cs-option-card">
+            <h5>Outlets & Switches</h5>
+            <p>Power where you need it.</p>
+            <div class="option-details">
+              110V Outlets / USB Ports / Switched Circuits
+            </div>
+          </div>
+          <div class="cs-option-card">
+            <h5>Exterior Lighting</h5>
+            <p>Light up your surroundings.</p>
+            <div class="option-details">
+              Porch Light / Flood Lights / Strip Lights
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interior Options -->
+      <div class="cs-options-category">
+        <h3>Interior Options</h3>
+        <div class="cs-options-grid">
+          <div class="cs-option-card">
+            <h5>Wall Finish</h5>
+            <p>Upgrade from standard plywood.</p>
+            <div class="option-details">
+              White Vinyl / ATP Walls / Insulated
+            </div>
+          </div>
+          <div class="cs-option-card">
+            <h5>E-Track & Tie Downs</h5>
+            <p>Secure your cargo properly.</p>
+            <div class="option-details">
+              Horizontal / Vertical / D-Rings
+            </div>
+          </div>
+          <div class="cs-option-card">
+            <h5>Cabinets & Storage</h5>
+            <p>Organize your tools and equipment.</p>
+            <div class="option-details">
+              Overhead / Base Cabinets / Workbench
+            </div>
+          </div>
+          <div class="cs-option-card">
+            <h5>Ceiling Options</h5>
+            <p>Finish out your interior.</p>
+            <div class="option-details">
+              Vinyl Ceiling / Insulated / Drop Ceiling
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Packages Section -->
+      <div class="cs-packages-section">
+        <h3>Popular Packages</h3>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="cs-package-card">
+              <h4>Contractor Package</h4>
+              <ul>
+                <li><i class="flaticon-tick"></i> Upgraded 5200lb Axles</li>
+                <li><i class="flaticon-tick"></i> ATP Floor Upgrade</li>
+                <li><i class="flaticon-tick"></i> E-Track (2 Rows)</li>
+                <li><i class="flaticon-tick"></i> 12V LED Interior Light</li>
+                <li><i class="flaticon-tick"></i> 36" Side Door</li>
+                <li><i class="flaticon-tick"></i> Ladder Racks</li>
+              </ul>
+              <a href="contact.html" class="cs-primary-btn w-100 text-center">
+                Get Quote
+                <i class="flaticon-right-arrow"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="cs-package-card featured">
+              <h4>Motorcycle Package</h4>
+              <ul>
+                <li><i class="flaticon-tick"></i> Wheel Chocks (3)</li>
+                <li><i class="flaticon-tick"></i> D-Rings (12)</li>
+                <li><i class="flaticon-tick"></i> ATP Floor</li>
+                <li><i class="flaticon-tick"></i> 12V LED Lighting</li>
+                <li><i class="flaticon-tick"></i> Flow-Thru Vents</li>
+                <li><i class="flaticon-tick"></i> Aluminum Wheels</li>
+              </ul>
+              <a href="contact.html" class="cs-primary-btn w-100 text-center">
+                Get Quote
+                <i class="flaticon-right-arrow"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="cs-package-card">
+              <h4>Race Trailer Package</h4>
+              <ul>
+                <li><i class="flaticon-tick"></i> 7000lb Axles</li>
+                <li><i class="flaticon-tick"></i> 50 Amp Electrical</li>
+                <li><i class="flaticon-tick"></i> Cabinets & Workbench</li>
+                <li><i class="flaticon-tick"></i> ATP Walls & Floor</li>
+                <li><i class="flaticon-tick"></i> LED Light Package</li>
+                <li><i class="flaticon-tick"></i> Aluminum Wheels</li>
+              </ul>
+              <a href="contact.html" class="cs-primary-btn w-100 text-center">
+                Get Quote
+                <i class="flaticon-right-arrow"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- End Options Content -->
+
+  <div class="cs-section-height"></div>
+  <!-- Section to Section Gap -->
+
+  <!-- Start CTA -->
+  <section>
+    <div class="cs-cta-fullw-horizontal cta-no-bg cs_center">
+      <div class="container">
+        <div class="row">
+          <div class="cs-cta-hor-in">
+            <div class="cs-cta-hor-title">
+              <h2 class="cs_white_color logi-splite">
+                Need Help Choosing Options?
+              </h2>
+            </div>
+            <a href="contact.html" class="cs-primary-btn">
+              Talk to Our Team
+              <i class="flaticon-right-arrow"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End CTA -->
+
+  <div class="cs-section-height"></div>
+  <!-- Section to Section Gap -->
+
+  <!-- Start Footer -->
+  <footer>
+    <div class="cs-logi-footer-container">
+      <div class="cs-logi-footer-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="cs-logi-cor-office cs-footer-widget">
+                <div class="cs-footer-widget-title">
+                  <h6>Contact Us</h6>
+                </div>
+                <p class="cs-max-width-200">
+                  Douglas, GA
+                </p>
+                <div class="cs-logi-emai-phone">
+                  <a href="tel:+19125551234" class="cs-text-style-h6">(912) 555-1234</a>
+                  <a href="mailto:info@diamondcargomfg.com" class="cs-text-style-h6">info@diamondcargomfg.com</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="cs-logi-cor-office cs-footer-widget">
+                <div class="cs-footer-widget-title">
+                  <h6>Hours</h6>
+                </div>
+                <p class="cs-max-width-200">
+                  Monday - Friday<br>
+                  8:00 AM - 5:00 PM EST
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-5">
+              <div class="cs-footer-widget">
+                <div class="cs-footer-widget-title">
+                  <h6>Quick Links</h6>
+                </div>
+                <div class="cs-logi-footer-useful-link">
+                  <ul>
+                    <li><a href="about.html" class="cs-text_b_line"><span>About Us</span></a></li>
+                    <li><a href="trailers.html" class="cs-text_b_line"><span>Our Trailers</span></a></li>
+                    <li><a href="options.html" class="cs-text_b_line"><span>Options</span></a></li>
+                    <li><a href="dealers.html" class="cs-text_b_line"><span>Become a Dealer</span></a></li>
+                    <li><a href="contact.html" class="cs-text_b_line"><span>Contact Us</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-7">
+              <div class="cs-footer-widget">
+                <div>
+                  <div class="cs-footer-widget-title">
+                    <h6>Diamond Cargo Mfg</h6>
+                  </div>
+                  <p>Quality enclosed trailers built in Douglas, Georgia since 2006.</p>
+                </div>
+                <div class="cs-social-common mt-4">
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <i class="flaticon-facebook-app-symbol"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="flaticon-instagram"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="cs-logi-copy-area">
+          <div class="cs-footer-copy-branding">
+            <div class="cs-footer-copy-branding">
+              <a href="index.html">
+                <img src="assets/img/logo_white_text.png" alt="Diamond Cargo Mfg" />
+              </a>
+              <span>Quality Trailers. Built Right.</span>
+            </div>
+          </div>
+          <div class="cs-footer-copy-text">
+            <p>&copy; 2025 Diamond Cargo Mfg. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cs-logi-footer-border">
+        <svg width="1920" height="186" viewBox="0 0 1920 186" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.2"
+            d="M1919.95 15.0784C1789.84 47.7321 1593.01 73.75 1313.98 21.8595C940.467 -47.6007 736.04 72.8343 688.434 185.993M0.135498 174.227C71.8468 137.994 149.172 106.307 231.119 82.6053C550.484 -9.76492 1181.35 52.3115 1168.87 185.973"
+            stroke="white" />
+        </svg>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Start Scrollup -->
+  <span class="cs_scrollup">
+    <i class="flaticon-top"></i>
+  </span>
+  <!-- End Scrollup -->
+
+  <!-- Script -->
+  <script src="assets/js/plugins/jquery-3.7.0.min.js"></script>
+  <script src="assets/js/plugins/swiper.min.js"></script>
+  <script src="assets/js/plugins/SplitText.min.js"></script>
+  <script src="assets/js/plugins/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/plugins/ScrollTrigger.min.js"></script>
+  <script src="assets/js/plugins/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Diamond Cargo Mfg" />
+  <meta name="description" content="Become a Diamond Cargo dealer. Partner with us and grow your business with quality enclosed trailers." />
+  <!-- Favicon Icon -->
+  <link rel="icon" href="assets/img/favicon.svg" />
+  <!-- Site Title -->
+  <title>Become a Dealer | Diamond Cargo Mfg</title>
+  <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Dealer Form Specific Styles */
+    .cs-dealer-form-wrap {
+      background: #f8f9fa;
+      padding: 50px;
+      border-radius: 10px;
+    }
+    .cs-dealer-form-wrap .form-control,
+    .cs-dealer-form-wrap .form-select {
+      padding: 15px 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+    .cs-dealer-form-wrap .form-control:focus,
+    .cs-dealer-form-wrap .form-select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 0.2rem rgba(var(--accent-rgb), 0.15);
+    }
+    .cs-dealer-form-wrap label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    .cs-dealer-benefits {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 40px;
+      border-radius: 10px;
+      color: #fff;
+    }
+    .cs-dealer-benefits h3 {
+      color: #fff;
+      margin-bottom: 25px;
+    }
+    .cs-dealer-benefits ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cs-dealer-benefits ul li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .cs-dealer-benefits ul li:last-child {
+      border-bottom: none;
+    }
+    .cs-dealer-benefits ul li i {
+      color: #4ade80;
+      font-size: 18px;
+    }
+    /* Form Messages */
+    .form-message {
+      padding: 15px 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .form-message.success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #6ee7b7;
+      display: block;
+    }
+    .form-message.error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+      display: block;
+    }
+    .form-message.loading {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #7dd3fc;
+      display: block;
+    }
+    @media (max-width: 991px) {
+      .cs-dealer-form-wrap {
+        padding: 30px 20px;
+      }
+      .cs-dealer-benefits {
+        padding: 30px 20px;
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Start Preloader -->
+  <div id="logi-preloader">
+    <div id="cs-logi-preloader" class="cs-logi-preloader">
+      <div class="reveal-img-wrap">
+        <div class="preloader-img-inner">
+          <img src="assets/img/logi-preloader-logo.png" alt="Diamond Cargo">
+        </div>
+      </div>
+     </div>
+  </div>
+  <!-- End Preloader -->
+
+  <!-- Start Header Section -->
+  <header class="cs_site_header cs-header-with-bg cs_style1 cs_sticky_header">
+    <!-- Header Topbar Start -->
+    <div class="cs_logi_topbar">
+      <div class="container-fluid">
+        <div class="cs-topbar-container">
+          <div class="cs-topbar-left">
+            <span class="cs-small-text cs-color-black">Douglas, GA | Quality Enclosed Trailers Since 2006</span>
+          </div>
+          <div class="cs-logi-topbar-right">
+            <div class="cs-topbar-social">
+              <ul>
+                <li>
+                  <a href="#" class="cs-text_b_line"><span>FB</span></a>
+                </li>
+                <li>
+                  <a href="#" class="cs-text_b_line"><span>IG</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Topbar -->
+
+    <!-- Start Main Header Area -->
+    <div class="cs_main_header">
+      <div class="container-fluid">
+        <div class="cs_main_header_in">
+          <!-- Start Main Header Left Area -->
+          <div class="cs_main_header_left">
+            <div class="cs-logi-header-logo">
+              <a class="cs_site_branding" href="index.html">
+                <img src="assets/img/logo_black_text.png" alt="Diamond Cargo Mfg" />
+              </a>
+            </div>
+          </div>
+          <!-- End Main Header Left Area -->
+
+          <!-- Start Main Header Middle Area -->
+          <div class="cs-logi-header-middle">
+            <div class="cs_nav cs_medium">
+              <ul class="cs_nav_list">
+                <li>
+                  <a href="index.html" class="cs-text_b_line"><span>Home</span></a>
+                </li>
+                <li>
+                  <a href="about.html" class="cs-text_b_line"><span>About</span></a>
+                </li>
+                <li>
+                  <a href="trailers.html" class="cs-text_b_line"><span>Trailers</span></a>
+                </li>
+                <li>
+                  <a href="options.html" class="cs-text_b_line"><span>Options</span></a>
+                </li>
+                <li class="active">
+                  <a href="dealers.html" class="cs-text_b_line"><span>Dealers</span></a>
+                </li>
+                <li>
+                  <a href="contact.html" class="cs-text_b_line"><span>Contact</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- End Main Header Middle Area -->
+
+          <!-- Start Main Header Right Area -->
+          <div class="cs_main_header_right">
+            <div class="cs-header-additional-item">
+              <a href="contact.html"><span class="cs_accent_color">+</span> Get a Quote</a>
+            </div>
+            <div class="cs_toolbox">
+              <span class="cs_icon_btn">
+                <span class="cs_icon_btn_in">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </span>
+            </div>
+          </div>
+          <!-- End Main Header Right Area -->
+        </div>
+      </div>
+    </div>
+    <!-- End Main Header Area -->
+
+    <!-- Header Email Phone -->
+    <div class="cs-header-emai-phone">
+      <div class="cs-topbar-email">
+        <div class="cs-email">
+          <a href="mailto:info@diamondcargomfg.com">info@diamondcargomfg.com</a>
+        </div>
+      </div>
+      <a href="tel:+19125551234" class="cs-header-phone">
+        <div class="cs-header-phone-content">
+          <div class="cs-header-phone-in">
+            <div class="cs-header-phone-icon">
+              <i class="flaticon-viber"></i>
+            </div>
+            <div class="cs-header-phone-number">
+              <span>Call Us</span>
+              <div>
+                <h6 class="cs-text-style-h6 cs-text_b_line">
+                  (912) 555-1234
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- Header Email Phone -->
+  </header>
+  <!-- End Header Section -->
+
+  <!-- Start Sidebar -->
+  <div class="cs_side_header">
+    <button class="cs_close"></button>
+    <div class="cs_side_header_overlay"></div>
+    <div class="cs_side_header_in">
+      <div class="cs-sidebar-about-brand">
+        <a class="cs_site_branding" href="index.html">
+          <img src="assets/img/logo_black_text.png" alt="Diamond Cargo Mfg" />
+        </a>
+        <p>
+          Quality enclosed trailers built in Douglas, Georgia since 2006.
+        </p>
+      </div>
+      <div class="cs-sidebar-middle-area">
+        <p>Douglas, GA</p>
+        <div class="cs-sidebar-emai-phone">
+          <a href="tel:+19125551234" class="cs-text-style-h6">(912) 555-1234</a>
+          <a href="mailto:info@diamondcargomfg.com" class="cs-text-style-h6">info@diamondcargomfg.com</a>
+        </div>
+        <div class="cs-common-icon-style cs-sidebar-social">
+          <ul>
+            <li>
+              <a href="#">
+                <i class="flaticon-facebook-app-symbol"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="flaticon-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Sidebar -->
+
+  <!-- Start Common BreadCrumb -->
+  <section>
+    <div class="cs-braidcrumb-wrap cs-bread-style-2">
+      <div class="container">
+        <div class="row cs_center">
+          <div class="cs-bread-page-title-area">
+            <div class="cs-page-title-in">
+              <div class="cs-page-title">
+                <h2>Become a Dealer</h2>
+              </div>
+              <div class="breadcrumb">
+                <ul class="cs_mp0">
+                  <li>
+                    <a href="index.html" class="cs-text_b_line"><span>Home</span></a>
+                  </li>
+                  <li>.</li>
+                  <li>Dealers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Common BreadCrumb -->
+
+  <div class="cs-section-height"></div>
+  <!-- Section to Section Gap -->
+
+  <!-- Start Dealer Page Content -->
+  <section>
+    <div class="cs-contact-page-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 mb-4 mb-lg-0">
+            <div class="cs-contact-in">
+              <h2>Partner With Us</h2>
+              <p class="cs-contact-text">Join the Diamond Cargo dealer network and grow your business with quality enclosed trailers that your customers will love.</p>
+
+              <div class="cs-dealer-benefits mt-4">
+                <h3>Why Partner With Diamond?</h3>
+                <ul>
+                  <li>
+                    <i class="flaticon-tick"></i>
+                    <span>Competitive dealer pricing & volume discounts</span>
+                  </li>
+                  <li>
+                    <i class="flaticon-tick"></i>
+                    <span>Fast turnaround on custom orders</span>
+                  </li>
+                  <li>
+                    <i class="flaticon-tick"></i>
+                    <span>Marketing support & sales materials</span>
+                  </li>
+                  <li>
+                    <i class="flaticon-tick"></i>
+                    <span>Dedicated dealer support team</span>
+                  </li>
+                  <li>
+                    <i class="flaticon-tick"></i>
+                    <span>Extensive customization options</span>
+                  </li>
+                  <li>
+                    <i class="flaticon-tick"></i>
+                    <span>Industry-leading warranty program</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="cs-dealer-form-wrap">
+              <h3 class="mb-4">Dealer Interest Form</h3>
+
+              <!-- Form Messages -->
+              <div id="form-message" class="form-message"></div>
+
+              <!-- Formspree Form - Replace YOUR_FORM_ID with actual Formspree endpoint -->
+              <form id="dealer-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="fullName" class="form-label">Full Name *</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="John Smith" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="companyName" class="form-label">Company Name *</label>
+                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="ABC Trailers LLC" required>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label">Phone *</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="john@abctrailers.com" required>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="city" class="form-label">City *</label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Atlanta" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="state" class="form-label">State *</label>
+                    <input type="text" class="form-control" id="state" name="state" placeholder="Georgia" required>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="businessType" class="form-label">Current Business Type *</label>
+                    <select class="form-select" id="businessType" name="businessType" required>
+                      <option value="" disabled selected>Select your business type</option>
+                      <option value="Dealer">Established Dealer</option>
+                      <option value="Hauler">Hauler / Transport</option>
+                      <option value="New Startup">New Startup</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="monthlyVolume" class="form-label">Est. Monthly Volume</label>
+                    <select class="form-select" id="monthlyVolume" name="monthlyVolume">
+                      <option value="" disabled selected>Select estimated volume</option>
+                      <option value="1-5">1-5 trailers/month</option>
+                      <option value="6-15">6-15 trailers/month</option>
+                      <option value="16-30">16-30 trailers/month</option>
+                      <option value="30+">30+ trailers/month</option>
+                      <option value="Not Sure">Not sure yet</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="message" class="form-label">Additional Notes</label>
+                  <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your business, current trailer sales, or any questions you have..."></textarea>
+                </div>
+
+                <!-- Hidden field for form identification -->
+                <input type="hidden" name="_subject" value="New Dealer Interest Form Submission">
+
+                <button type="submit" class="cs-primary-btn" id="submit-btn">
+                  Submit Application
+                  <i class="flaticon-right-arrow"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Dealer Page Content -->
+
+  <div class="cs-section-height"></div>
+  <!-- Section to Section Gap -->
+
+  <!-- Start Footer -->
+  <footer>
+    <div class="cs-logi-footer-container">
+      <div class="cs-logi-footer-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="cs-logi-cor-office cs-footer-widget">
+                <div class="cs-footer-widget-title">
+                  <h6>Contact Us</h6>
+                </div>
+                <p class="cs-max-width-200">
+                  Douglas, GA
+                </p>
+                <div class="cs-logi-emai-phone">
+                  <a href="tel:+19125551234" class="cs-text-style-h6">(912) 555-1234</a>
+                  <a href="mailto:info@diamondcargomfg.com" class="cs-text-style-h6">info@diamondcargomfg.com</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="cs-logi-cor-office cs-footer-widget">
+                <div class="cs-footer-widget-title">
+                  <h6>Hours</h6>
+                </div>
+                <p class="cs-max-width-200">
+                  Monday - Friday<br>
+                  8:00 AM - 5:00 PM EST
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-5">
+              <div class="cs-footer-widget">
+                <div class="cs-footer-widget-title">
+                  <h6>Quick Links</h6>
+                </div>
+                <div class="cs-logi-footer-useful-link">
+                  <ul>
+                    <li><a href="about.html" class="cs-text_b_line"><span>About Us</span></a></li>
+                    <li><a href="trailers.html" class="cs-text_b_line"><span>Our Trailers</span></a></li>
+                    <li><a href="options.html" class="cs-text_b_line"><span>Options</span></a></li>
+                    <li><a href="dealers.html" class="cs-text_b_line"><span>Become a Dealer</span></a></li>
+                    <li><a href="contact.html" class="cs-text_b_line"><span>Contact Us</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-7">
+              <div class="cs-footer-widget">
+                <div>
+                  <div class="cs-footer-widget-title">
+                    <h6>Diamond Cargo Mfg</h6>
+                  </div>
+                  <p>Quality enclosed trailers built in Douglas, Georgia since 2006.</p>
+                </div>
+                <div class="cs-social-common mt-4">
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <i class="flaticon-facebook-app-symbol"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="flaticon-instagram"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="cs-logi-copy-area">
+          <div class="cs-footer-copy-branding">
+            <div class="cs-footer-copy-branding">
+              <a href="index.html">
+                <img src="assets/img/logo_white_text.png" alt="Diamond Cargo Mfg" />
+              </a>
+              <span>Quality Trailers. Built Right.</span>
+            </div>
+          </div>
+          <div class="cs-footer-copy-text">
+            <p>&copy; 2025 Diamond Cargo Mfg. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cs-logi-footer-border">
+        <svg width="1920" height="186" viewBox="0 0 1920 186" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.2"
+            d="M1919.95 15.0784C1789.84 47.7321 1593.01 73.75 1313.98 21.8595C940.467 -47.6007 736.04 72.8343 688.434 185.993M0.135498 174.227C71.8468 137.994 149.172 106.307 231.119 82.6053C550.484 -9.76492 1181.35 52.3115 1168.87 185.973"
+            stroke="white" />
+        </svg>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Start Scrollup -->
+  <span class="cs_scrollup">
+    <i class="flaticon-top"></i>
+  </span>
+  <!-- End Scrollup -->
+
+  <!-- Script -->
+  <script src="assets/js/plugins/jquery-3.7.0.min.js"></script>
+  <script src="assets/js/plugins/swiper.min.js"></script>
+  <script src="assets/js/plugins/SplitText.min.js"></script>
+  <script src="assets/js/plugins/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/plugins/ScrollTrigger.min.js"></script>
+  <script src="assets/js/plugins/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Dealer Form Handler -->
+  <script>
+    document.getElementById('dealer-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const form = this;
+      const submitBtn = document.getElementById('submit-btn');
+      const messageDiv = document.getElementById('form-message');
+      const formData = new FormData(form);
+
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Submitting... <i class="flaticon-right-arrow"></i>';
+      messageDiv.className = 'form-message loading';
+      messageDiv.textContent = 'Sending your application...';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          messageDiv.className = 'form-message success';
+          messageDiv.innerHTML = '<strong>Thank you!</strong> Your dealer application has been submitted. Our team will contact you within 1-2 business days.';
+          form.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        messageDiv.className = 'form-message error';
+        messageDiv.innerHTML = '<strong>Oops!</strong> Something went wrong. Please try again or call us directly at (912) 555-1234.';
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Submit Application <i class="flaticon-right-arrow"></i>';
+        // Scroll to message
+        messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  </script>
+</body>
+
+</html>
