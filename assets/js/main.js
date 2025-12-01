@@ -894,4 +894,33 @@ function showScrollUp() {
     observer.observe(funnyMessage);
   }
 
+  /*--------------------------------------------------------------
+  22. Dark Mode Toggle
+  --------------------------------------------------------------*/
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+
+  // Check for saved dark mode preference or system preference
+  const savedDarkMode = localStorage.getItem('darkMode');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // Apply saved preference or system preference
+  if (savedDarkMode === 'enabled' || (savedDarkMode === null && prefersDark)) {
+    body.classList.add('dark-mode');
+  }
+
+  // Toggle dark mode on button click
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+
+      // Save preference to localStorage
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+      }
+    });
+  }
+
 })(jQuery);

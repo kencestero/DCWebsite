@@ -6526,4 +6526,282 @@ figure img {
   .error-content-wrap .container-fluid {
     padding: 0px 10px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*--------------------------------------------------------------
+  DARK MODE TOGGLE & STYLES
+--------------------------------------------------------------*/
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+.dark-mode-btn {
+  position: relative;
+  width: 70px;
+  height: 36px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 4px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+.dark-mode-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+.toggle-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sun-icon {
+  left: 8px;
+  color: #ffd93d;
+  opacity: 1;
+}
+.moon-icon {
+  right: 8px;
+  color: #f5f5f5;
+  opacity: 0.5;
+}
+.toggle-diamond {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  padding: 4px;
+  object-fit: contain;
+}
+
+/* Dark Mode Active State for Toggle */
+body.dark-mode .dark-mode-btn {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+body.dark-mode .toggle-diamond {
+  left: calc(100% - 32px);
+  background: #2d2d44;
+}
+body.dark-mode .sun-icon {
+  opacity: 0.5;
+}
+body.dark-mode .moon-icon {
+  opacity: 1;
+  color: #ffd93d;
+}
+
+/* ===== DARK MODE GLOBAL STYLES ===== */
+body.dark-mode {
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+}
+
+/* Header Dark Mode */
+body.dark-mode .cs_site_header,
+body.dark-mode .cs_site_header.cs_sticky_active {
+  background-color: #1a1a1a !important;
+  border-bottom: 1px solid #2d2d2d;
+}
+body.dark-mode .cs_logi_topbar {
+  background-color: #111 !important;
+}
+body.dark-mode .cs_nav .cs_nav_list > li > a,
+body.dark-mode .cs-header-additional-item a,
+body.dark-mode .cs-topbar-left span,
+body.dark-mode .cs-small-text {
+  color: #e0e0e0 !important;
+}
+
+/* Main Content Areas Dark Mode */
+body.dark-mode .cs-expertise-wrap,
+body.dark-mode .cs-about-wrapper-1,
+body.dark-mode .cs-service-section,
+body.dark-mode .cs-counter-wrap,
+body.dark-mode .cs-team-wrapper,
+body.dark-mode .cs-com-feature-wrapper,
+body.dark-mode .cs-project-slider-wrapper,
+body.dark-mode .cs-blog-area-style-1,
+body.dark-mode section {
+  background-color: #0d0d0d !important;
+}
+
+/* Pattern Background Dark Mode */
+body.dark-mode .cs-about-wrapper-1::before,
+body.dark-mode .cs-service-section::before {
+  opacity: 0.03 !important;
+}
+
+/* Text Colors Dark Mode */
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
+body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+  color: #ffffff !important;
+}
+body.dark-mode p,
+body.dark-mode .cs-about-para p,
+body.dark-mode .cs-exp-text p,
+body.dark-mode .cs-ser-para p,
+body.dark-mode .cs-com-fe-text p {
+  color: #b0b0b0 !important;
+}
+body.dark-mode .cs-about-list-wrap li {
+  color: #d0d0d0 !important;
+}
+
+/* Cards and Boxes Dark Mode */
+body.dark-mode .cs-expert-area-item,
+body.dark-mode .cs-service-item,
+body.dark-mode .cs-counter-item,
+body.dark-mode .cs-member-item,
+body.dark-mode .cs-com-feature-content,
+body.dark-mode .cs-blog-item {
+  background-color: #1a1a1a !important;
+  border-color: #2d2d2d !important;
+}
+body.dark-mode .cs-expert-line,
+body.dark-mode .cs-ser-border {
+  background-color: #2d2d2d !important;
+}
+
+/* Quote/Process Section Dark Mode */
+body.dark-mode .cs-wrap-q-p {
+  background-color: #111 !important;
+}
+body.dark-mode .cs-quote-form-container {
+  background-color: #1a1a1a !important;
+}
+body.dark-mode .quote-form-content-in {
+  background-color: #1a1a1a !important;
+}
+body.dark-mode .form-control,
+body.dark-mode .cs-form-select {
+  background-color: #2d2d2d !important;
+  border-color: #3d3d3d !important;
+  color: #e0e0e0 !important;
+}
+body.dark-mode .form-control::placeholder {
+  color: #808080 !important;
+}
+
+/* Footer Dark Mode */
+body.dark-mode .cs-logi-footer-container {
+  background-color: #0a0a0a !important;
+}
+body.dark-mode .cs-footer-widget p,
+body.dark-mode .cs-logi-footer-useful-link a,
+body.dark-mode .cs-footer-copy-text p {
+  color: #909090 !important;
+}
+body.dark-mode .cs-footer-widget-title h6 {
+  color: #ffffff !important;
+}
+
+/* Buttons Dark Mode */
+body.dark-mode .cs-primary-btn a,
+body.dark-mode .cs-primary-btn-in {
+  background-color: #D40511 !important;
+  color: #fff !important;
+}
+
+/* Blog Cards Dark Mode */
+body.dark-mode .cs-blog-content {
+  background-color: #1a1a1a !important;
+}
+body.dark-mode .cs-blog-title a h5 {
+  color: #ffffff !important;
+}
+body.dark-mode .cs-blog-excerpt-text p {
+  color: #a0a0a0 !important;
+}
+
+/* Process Items Dark Mode */
+body.dark-mode .process-item {
+  border-color: #3d3d3d !important;
+}
+body.dark-mode .process-item h6 {
+  color: #ffffff !important;
+}
+
+/* Funny Message Dark Mode */
+body.dark-mode .funny-message-box {
+  background: rgba(30, 30, 30, 0.97);
+  border-left-color: #D40511;
+}
+body.dark-mode .funny-message-box span {
+  color: #f0f0f0;
+}
+
+/* Scrollbar Dark Mode */
+body.dark-mode::-webkit-scrollbar {
+  width: 10px;
+}
+body.dark-mode::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+body.dark-mode::-webkit-scrollbar-thumb {
+  background: #3d3d3d;
+  border-radius: 5px;
+}
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+  background: #4d4d4d;
+}
+
+/* Smooth Transition for Dark Mode */
+body, body * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Mobile responsive for toggle */
+@media screen and (max-width: 991px) {
+  .dark-mode-toggle {
+    margin-right: 10px;
+  }
+  .dark-mode-btn {
+    width: 60px;
+    height: 32px;
+  }
+  .toggle-diamond {
+    width: 24px;
+    height: 24px;
+  }
+  body.dark-mode .toggle-diamond {
+    left: calc(100% - 28px);
+  }
+}
+@media screen and (max-width: 575px) {
+  .dark-mode-toggle {
+    margin-right: 5px;
+  }
+  .dark-mode-btn {
+    width: 50px;
+    height: 28px;
+  }
+  .toggle-diamond {
+    width: 20px;
+    height: 20px;
+  }
+  .toggle-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+  body.dark-mode .toggle-diamond {
+    left: calc(100% - 24px);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
