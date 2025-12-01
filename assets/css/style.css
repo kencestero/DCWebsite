@@ -3214,6 +3214,14 @@ button i {
   letter-spacing: -2px;
   font-weight: 700;
 }
+.cs-hero-slider-wrap .cs-hero-slider-content-wrap .cs-hero-slider-content .cs-hero-slide-content .cs-hero-subheading {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
 .cs-hero-slider-wrap .cs-hero-slider-content-wrap .cs-hero-slider-instrument {
   position: absolute;
   left: 100px;
@@ -3846,6 +3854,37 @@ button i {
   font-weight: 500;
   line-height: 135%;
 }
+
+/* Experience badge on right side of content */
+.cs-about-content-with-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+.cs-about-content-with-badge .cs-about-content-in {
+  flex: 1;
+}
+.cs-about-experience-badge {
+  flex-shrink: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px;
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 80%, 0% 20%);
+          clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 80%, 0% 20%);
+  text-align: center;
+}
+.cs-about-experience-badge h2 {
+  color: #fff;
+}
+.cs-about-experience-badge p {
+  color: #fff;
+  font-family: "Radio Canada Big";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 135%;
+}
+
 .cs-about-wrapper-1.cs-about-2 {
   padding-left: calc((100% - 1320px) / 2);
 }
@@ -3915,6 +3954,13 @@ button i {
     max-width: 960px;
     margin: auto;
     justify-content: flex-start !important;
+  }
+  .cs-about-content-with-badge {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cs-about-experience-badge {
+    margin-top: 30px;
   }
   .cs-about-wrapper-1 .cs-about-img-area {
     padding-bottom: 50px;
