@@ -3818,7 +3818,7 @@ button i {
 }
 .cs-about-wrapper-1 .cs-about-wrap-in .cs-about-content-wrap {
   display: flex;
-  justify-content: end;
+  justify-content: flex-start;
 }
 .cs-about-wrapper-1 .cs-about-wrap-in .cs-about-content-wrap .cs-about-content-in {
   max-width: 637px;
@@ -3864,6 +3864,7 @@ button i {
 }
 .cs-about-content-with-badge .cs-about-content-in {
   flex: 1;
+  max-width: 550px;
 }
 .cs-about-experience-badge {
   flex-shrink: 0;
@@ -3876,7 +3877,7 @@ button i {
   text-align: center;
   opacity: 1 !important;
   position: absolute;
-  right: -80px;
+  right: -220px;
   top: 50%;
   transform: translateY(-50%);
   min-width: 180px;
