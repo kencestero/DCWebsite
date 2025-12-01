@@ -3832,6 +3832,56 @@ button i {
 .cs-about-wrapper-1 .cs-about-wrap-in .cs-about-img-area {
   position: relative;
 }
+
+/* Funny bounce message on trailer image */
+.funny-message-overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  right: 20px;
+  z-index: 20;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: none;
+}
+.funny-message-overlay.animate-in {
+  animation: bounceInFromLeft 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+.funny-message-box {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-left: 5px solid #D40511;
+  max-width: 450px;
+}
+.funny-message-box span {
+  font-family: "Radio Canada Big", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0A0A0A;
+  line-height: 1.4;
+  display: block;
+}
+@keyframes bounceInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(10%);
+  }
+  80% {
+    transform: translateX(-5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .cs-about-wrapper-1 .cs-about-wrap-in .cs-about-img-area .cs-about-img-over-content {
   position: absolute;
   right: 0;

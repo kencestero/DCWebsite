@@ -869,4 +869,29 @@ function showScrollUp() {
       handleTabClick(tabs[0], new Event("click"));
     }
   });
+
+  /*--------------------------------------------------------------
+  21. Funny Message Bounce Animation on Scroll
+  --------------------------------------------------------------*/
+  const funnyMessage = document.querySelector('.funny-message-overlay');
+  if (funnyMessage) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Small delay before animation starts
+          setTimeout(() => {
+            funnyMessage.classList.add('animate-in');
+          }, 300);
+          // Only animate once
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.5, // Trigger when 50% of element is visible
+      rootMargin: '0px'
+    });
+
+    observer.observe(funnyMessage);
+  }
+
 })(jQuery);
